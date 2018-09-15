@@ -1,0 +1,506 @@
+body {
+	height:100% !important;
+		
+	font-size: 15px;
+	font-size: normal;
+	font-smooth: always;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment:fixed;
+	background-size:113%;
+	background-image: url("../images/fundo.jpg");
+
+}
+html, header {
+		height:100% !important;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+/*menu*/
+header{
+		float: left;
+		position: fixed;
+}
+a {
+		text-decoration: none;
+		-moz-transition: all linear .3s;
+		-webkit-transition: all linear .3s;
+		-o-transition: all linear .3s;
+		transition: all linear .3s;
+}
+.logo-menu{
+		width: 200px;
+		margin-left: 40px;
+}
+.vertical-menu {
+		width: 300px;
+		height: 100%;
+		background: black;
+		padding: 10px;
+}
+.welcome-username{
+		float: right;
+		color: white;
+}
+
+
+.vertical-menu a {
+		background-color: black;
+		color: white;
+		display: block;
+		padding: 12px;
+		border-radius:  5px;
+		text-decoration: none;
+		margin: 3px;
+}
+.vertical-menu a:hover {
+		background-color: #1463987d;
+		margin-left: 20px;
+}
+
+.menu-icons{
+		margin-right: 12px;
+}
+
+/*table-layout: */
+form,input,select,textarea{margin:0; padding:0px; color:#ffffff;}
+
+.box {
+		top: 80px;
+		margin:0 auto;
+		width:600px;
+		background:#222222;
+		position:relative;
+		border:1px solid #262626;
+		box-shadow: 0px 0px 100px #000000;
+		border-radius: 15px 15px 15px 15px;
+}
+.box label span {
+		display: block;
+		color:#bbbbbb;
+		font-size:13px;
+		text-align:left;
+		opacity:0.50;
+		position: relative;
+		margin-left: 5px;
+}
+
+.box-cadastro-cliente{
+		width: 546px;
+}
+.box-cadastro-usuario{
+		width: 546px;
+}
+
+
+.box-login{
+		text-align: center;
+		width:550px !important;
+}
+.box-login .button{
+		left:0px !important;
+		margin-right: 15px !important;
+}
+.logo-login{
+		margin: 30px 210px;
+		width: 175px;
+
+}
+.btn-login{
+		text-align: right;
+}
+.box h1 { 
+		color:#ffffff;
+		font-size:18px;
+		text-transform:uppercase;
+		padding:5px 0 5px 5px;
+		border-bottom:1px solid #161712;
+		border-top:1px solid #161712; 
+}
+
+.box label {
+		width:98%;
+		margin-left: 6px;
+		display: inline-block;
+		background:#1C1C1C;
+		border-top:1px solid #262626;
+		border-bottom:1px solid #161712;
+		padding:5px 0;
+}
+.box .label-button {
+		width:98% !important;
+		text-align: right;
+		padding-right: 9px;
+}
+
+/*.box .label-adc-produto {
+		width:98% !important;
+		text-align: left;
+		padding-right: 9px;
+
+}*/
+
+.box .label-valor-total span {
+		text-align: center;
+		float: right;
+		margin-right: 10px;
+}
+.box .label-valor-total{
+		width:98% !important;
+}
+
+.ClientInOrder{
+	color: white;
+    position: relative;
+    margin: 0px 30px 10px;
+    background: black;
+    text-transform: uppercase;
+}
+
+.box .input-text {
+		margin: 3px 5px;
+		padding:8px 10px !important;
+		background:#262626;
+		border-bottom: 1px double #171717;
+		border-top: 1px double #171717;
+		border-left:1px double #333333;
+		border-right:1px double #333333;
+}
+#nome-cliente{
+		width:240px;
+}
+
+#snome-cliente{
+		width: 240px;
+}
+#cpf-cliente{
+		width: 132px;
+}
+
+#cep-cliente{
+		width: 115px;
+}
+#numero-end-cliente{
+		width: 80px;
+}
+#numero-end-fornecedor{
+		width: 80px;
+}
+#button-cadastrar-cliente{
+		margin-top: 3px;
+		margin-right: 15px;
+}
+.button-cadastrar-cliente{
+		text-align: right;
+}
+#button-cadastrar-usuario{
+		margin-top: 3px;
+		margin-right: 15px;
+}
+
+.button-cadastrar-fornecedor{
+		text-align: right;
+}
+
+#button-cadastrar-fornecedor{
+		margin-top: 3px;
+		margin-right: 15px;
+}
+
+.button-cadastrar-usuario{
+		text-align: right;
+}
+
+
+.box .button{
+		margin:0;
+		padding:4px 7px;
+		background:#337ab7;
+		/*:left:565px;*/
+		width:95px;
+		border: 1px double #286090;
+}
+.box .button-cancelar{
+		margin:0 0 -5px 0;
+		padding:4px 7px;
+		background:green;
+		border:0px;
+		position: relative;
+		top:-2px;
+		/*:left:565px;*/
+		width:95px;
+		border: 1px double green;
+		float: right;
+}
+.box .button-somar-do-pedido{
+		width: 22px;
+		height: 22px;
+		border-radius: 30px;
+		background-color: green;
+		border: green;
+		top: 0;
+		margin: 0px 0px 13px 5px;
+}
+
+/*Controle de lucro*/
+
+/*abrir pedido*/
+.box-pedido{
+	    width: 290px;
+	    background: #222222;
+	    color: #bbbbbb;
+	    top: 0;
+	    float: left;
+	    left: 300px;
+	    margin: 30px;
+}
+
+
+.box input{
+		background: #262626;
+		color: #bbbbbb;
+}
+
+#CloneRow{
+	text-align: center;
+}
+
+#linhaClonada input{
+	width: 86px;
+}
+
+.box .adicionar-ao-pedido-nome {
+		height: 25px;
+		background:#262626;
+		border-bottom: 1px double #171717;
+		border-top: 1px double #171717;
+		border-left:1px double #333333;
+		border-right:1px double #333333;
+}
+.box .adicionar-ao-pedido-qtd{
+		margin-left: 4px;
+		width: 35px;
+		height: 25px;
+		background:#262626;
+		border-bottom: 1px double #171717;
+		border-top: 1px double #171717;
+		border-left:1px double #333333;
+		border-right:1px double #333333;
+}
+.box .adicionar-ao-pedido-valor{
+		margin-left: 4px;
+		width: 65px;
+		height: 25px;
+		background:#262626;
+		border-bottom: 1px double #171717;
+		border-top: 1px double #171717;
+		border-left:1px double #333333;
+		border-right:1px double #333333;
+}
+.btn-adicionar{
+		left: 0 !important;
+}
+.label-btn{
+		text-align: center;
+}
+
+/*ESTOQUE*/
+
+.TabelaEstoque {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 76%;
+	position: relative;
+	margin-left: 300px;
+	border: 1px solid #262626;
+	border-radius: 15px;
+}
+
+.TabelaEstoque td, th {
+	border: 1px solid #555;
+	text-align: center;
+	padding: 8px;
+}
+
+.TabelaEstoque th{
+color: white;
+}
+
+.TabelaEstoque tr:nth-child(even) {
+	background-color: #1c1c1c;
+}
+
+.TabelaEstoque tr {
+	background-color: #333;
+}
+
+.TabelaEstoque td input{
+background: #222222;
+border: 1px solid #222222;
+width: 100%;
+}
+
+.TabelaEstoque td textarea{
+background: #222222;
+border: 1px solid #222222;
+}
+
+.AddProd{
+		text-align: right;
+		position: relative;
+}
+
+.AddProd .btn-salvar{
+		margin: 20px;
+		padding: 10px;
+		color: black;
+		background: #00ff00c2;
+		font-weight: 600;
+}
+
+/*.AddProd .btn-adicionar{
+		margin: 20px;
+		padding: 10px;
+		color: white;
+		background: #ff0000a3;
+		font-weight: 600;
+}*/
+
+.valor-total{
+		float: left;
+		padding: 6px;
+}
+.btn-novo-pedido{
+		background-color: #337ab7;
+		border: #337ab7;
+		margin: 20px;
+		padding: 10px;
+}
+
+.tabela-lista-usuarios{
+		background: white;
+		color: black;
+}
+
+.tabela-lista-fornecedores{
+		background: white;
+		color: black;
+}
+
+.tabela-lista-clientes{
+		background: white;
+		color: black;
+}
+
+#nome-fornecedor{
+		width: 96%;
+}
+
+#descricao-fornecedor{
+		color: #bbbbbb; 
+		width: 96%
+}
+
+.see-cad, .see-cad:focus{
+    float: right;
+    margin: 50px;
+    background-color: #262626;
+    border-color: white;
+    color: white;
+}
+
+.modal-content{
+	position: absolute;
+}
+.tabela-listar{
+	width: 77%;
+	left: 300px;
+	position: relative;
+	top: 100px;
+}
+@media screen and (max-width: 765px){
+	body{
+		background-size: 310%;
+	}
+
+	.box{
+		width: 330px;
+				margin: 50px 23px;
+				position: absolute;
+	}
+
+		#MobileHome{
+				z-index: 100;
+				margin-left:-300px;
+				transition: all 250ms linear;
+		}
+
+		#MobileHome .toggle-btn{
+				position: absolute;
+				left: 310px;
+				top: 20px;
+		}
+
+		#MobileHome .toggle-btn span{
+				display: block;
+				width: 40px;
+				height: 5px;
+				background: white;
+				margin: 8px 0px;
+		}
+
+		.active{
+				margin-left: 0px !important;
+		}
+
+		.vertical-menu{
+				width: 280px;
+		}
+
+		.logo-login{
+				margin: 30px 80px;
+		}
+
+		.tabela-lista-fornecedores{
+				margin: 0;
+		}
+
+		.tabela-lista-clientes{
+			margin: 0;
+		}
+
+		.TabelaEstoque{
+				margin: 0;
+		}
+
+		.TabelaEstoque td, th{
+				padding: 7px !important;
+		}
+
+		.box label{
+				width: 96%;
+		}
+
+}
