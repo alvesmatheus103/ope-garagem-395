@@ -464,6 +464,13 @@ border: 1px solid #222222;
     color: white;
 }
 
+.tabela-listar{
+	width: 77%;
+	left: 300px;
+	position: relative;
+	top: 100px;
+}
+
 .modal-content{
 	position: absolute;
 }
