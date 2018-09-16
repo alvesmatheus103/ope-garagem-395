@@ -1,4 +1,4 @@
-<form name="meuForm" method="post" class="form-pedido" id="form-pedido" action="../controller/SalvaPedido.php">
+<form name="meuForm" method="post" class="form-pedido" id="form-pedido" action="../controller/SalvaPedidos/SalvaPedido.php">
   <div class="box box-pedido"> 
 
 <!--STATUS DA COMANDA-->
@@ -166,6 +166,11 @@
     </div>
 
       Valor Total: <input type="text" readonly name="TotalPag" value="" id="TotalPag">
+
+      <label>
+        <span>Descrição</span>
+        <textarea class="input-text" id="descricao-pedido" name="descricao-pedido" rows="2" placeholder="até 40 caracteres"></textarea>
+      </label>  
 
     <label class="label" style="width: 32%">
       <input type="submit" class="button button-fechar" value="Fechar Pedido" onclick="saveTextAsFile1()" />

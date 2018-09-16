@@ -17,6 +17,7 @@
   include "../model/formPedidos/formulario1.php";
   include "../model/formPedidos/formulario2.php";
   include "../model/formPedidos/formulario3.php";
+  include "../model/formPedidos/formulario4.php";
 ?>
 
   <!-- jQuery -->

@@ -456,6 +456,11 @@ border: 1px solid #222222;
 		width: 96%
 }
 
+#descricao-pedido{
+		color: #bbbbbb; 
+		width: 96%
+}
+
 .see-cad, .see-cad:focus{
     float: right;
     margin: 50px;
