@@ -1,5 +1,5 @@
 <?php 
-  include "../model/conexao.php";
+  include "../../model/conexao.php";
   session_start();
 	date_default_timezone_set('America/Sao_Paulo');
   $status = isset($_POST['ComandaStatus']) ? $_POST['ComandaStatus'] : false;

@@ -165,7 +165,7 @@
       </div>
     </div>
 
-      Valor Total: <input type="text" readonly name="TotalPag" value="" id="TotalPag">
+      Valor Total: <input type="text" readonly name="TotalPag" value="" id="TotalPag" class="TotalPag">
 
       <label>
         <span>Descrição</span>

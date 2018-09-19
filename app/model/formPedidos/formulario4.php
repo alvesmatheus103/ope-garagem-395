@@ -1,20 +1,20 @@
-<form name="meuForm" method="post" class="form-pedido" id="form-pedido3" action="../controller/SalvaPedidos/SalvaPedido4.php">
+<form name="meuForm" method="post" class="form-pedido" id="form-pedido4" action="../controller/SalvaPedidos/SalvaPedido4.php">
   <div class="box box-pedido"> 
 
 <!--STATUS DA COMANDA-->
 
 <?php
  
-(isset($_POST["ComandaStatus3"])) ? $ComandaStatus3 = $_POST["ComandaStatus3"] : $ComandaStatus3=0;
+(isset($_POST["ComandaStatus4"])) ? $ComandaStatus4 = $_POST["ComandaStatus4"] : $ComandaStatus4=0;
  
 ?>
 
 <div class="StatusPedido">
 <span>Status: </span>
-<select id="ComandaStatus3" name="ComandaStatus3" class="StatusInOrder">
-  <option <?php if ($ComandaStatus3 == 0 ) echo 'selected' ; ?> value=""></option>
-  <option <?php if ($ComandaStatus3 == 1 ) echo 'selected' ; ?> value="Aberto">Aberto</option>
-  <option <?php if ($ComandaStatus3 == 2 ) echo 'selected' ; ?> value="Fechado">Fechado</option>
+<select id="ComandaStatus4" name="ComandaStatus4" class="StatusInOrder">
+  <option <?php if ($ComandaStatus4 == 0 ) echo 'selected' ; ?> value=""></option>
+  <option <?php if ($ComandaStatus4 == 1 ) echo 'selected' ; ?> value="Aberto">Aberto</option>
+  <option <?php if ($ComandaStatus4 == 2 ) echo 'selected' ; ?> value="Fechado">Fechado</option>
 </select>
 </div>
 <!---------->
@@ -23,7 +23,7 @@
           include "../controller/ClienteEmPedido.php";
           include "../controller/ProdutosEmPedido.php";
         ?>
-    <select class="ClientInOrder4 ClientInOrder" id="ClientInOrder4" name="ClienteName3"><option value=""></option>
+    <select class="ClientInOrder" id="ClientInOrder4" name="ClienteName4"><option value=""></option>
       <?php while ($row1 = mysqli_fetch_array($result1)):;?>
         <option><?php echo $row1[1];?></option>
       <?php endwhile;?>
@@ -165,19 +165,19 @@
       </div>
     </div>
 
-      Valor Total: <input type="text" readonly name="TotalPag3" value="" id="TotalPag">
+      Valor Total: <input type="text" readonly name="TotalPag4" value="" id="TotalPag4" class="TotalPag">
 
       <label>
         <span>Descrição</span>
-        <textarea class="input-text" id="descricao-pedido" name="descricao-pedido3" rows="2" placeholder="até 40 caracteres"></textarea>
+        <textarea class="input-text" id="descricao-pedido" name="descricao-pedido4" rows="2" placeholder="até 40 caracteres"></textarea>
       </label>  
 
     <label class="label" style="width: 32%">
-      <input type="submit" class="button button-fechar" value="Fechar Pedido" onclick="saveTextAsFile3()" />
+      <input type="submit" class="button button-fechar" value="Fechar Pedido" onclick="saveTextAsFile4()" />
     </label>         
   
     <label class="label" style="width: 38%;margin-left: 70px;">
-      <input type="button" class="button button-limpar-comanda" value="Limpar Comanda" onclick="CleanFormOrder3()" />
+      <input type="button" class="button button-limpar-comanda" value="Limpar Comanda" onclick="CleanFormOrder4()" />
     </label>  
 
   </div>
@@ -185,7 +185,7 @@
     </form>
 
 <script type="text/javascript">
-function saveTextAsFile3() {
+function saveTextAsFile4() {
   var jcontent= [{
     NomeCliente : document.getElementById("ClientInOrder4").value,
     Produto : document.getElementById("Prod21").value,
@@ -231,7 +231,7 @@ function saveTextAsFile3() {
   var Preco5 = document.getElementById("ValorProd26").value;
   var Preco6 = document.getElementById("ValorProd27").value;
   var Quant = Number(Preco) + Number(Preco1) + Number(Preco2) + Number(Preco3) + Number(Preco4) + Number(Preco5) + Number(Preco6);
-  var TotalQuant = document.getElementById("TotalPag3");
+  var TotalQuant = document.getElementById("TotalPag4");
   TotalQuant.value = "R$ " + Quant;
 
 
@@ -265,9 +265,9 @@ function saveTextAsFile3() {
   downloadLink.click();
 }
 
-function CleanFormOrder3(){
+function CleanFormOrder4(){
   if (confirm("Tem certeza que quer apagar essa comanda?")) {
-    document.getElementById("form-pedido3").reset();
+    document.getElementById("form-pedido4").reset();
   }
 
   else {

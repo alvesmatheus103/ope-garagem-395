@@ -1,17 +1,17 @@
 <?php 
-  include "../model/conexao.php";
+  include "../../model/conexao.php";
   session_start();
 	date_default_timezone_set('America/Sao_Paulo');
-  $status = isset($_POST['ComandaStatus1']) ? $_POST['ComandaStatus1'] : false;
+  $status = isset($_POST['ComandaStatus2']) ? $_POST['ComandaStatus2'] : false;
 
-	$descricao = isset($_POST['descricao-pedido1']) ? $_POST['descricao-pedido1'] : false;
+	$descricao = isset($_POST['descricao-pedido2']) ? $_POST['descricao-pedido2'] : false;
 
 	$emailFunc = $_SESSION['EmailUsuario'];
 	$dadosFunc = mysqli_query($conexao, "SELECT * FROM funcionario WHERE email = '$emailFunc'");
 	$funcionario = mysqli_fetch_array($dadosFunc);
 	$CpfFuncLogado = $funcionario['cpf'];
 
-  $nomeCliente = isset($_POST['ClienteName1']) ? $_POST['ClienteName1'] : false;
+  $nomeCliente = isset($_POST['ClienteName2']) ? $_POST['ClienteName2'] : false;
 	$dadosCliente = mysqli_query($conexao, "SELECT * FROM cliente WHERE nome = '$nomeCliente'");
 	$ClienteCpf = mysqli_fetch_array($dadosCliente);
 	$CpfClientePedido = $ClienteCpf['cpf'];
