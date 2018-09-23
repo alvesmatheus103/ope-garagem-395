@@ -10,8 +10,8 @@
 	$cidade = isset($_POST['cidade-cliente']) ? $_POST['cidade-cliente'] : false;
 	$telefone = isset($_POST['tel']) ? $_POST['tel'] : false;
 	$email = isset($_POST['email']) ? $_POST['email'] : false;
-	$sqlFornec = mysqli_query($conexao, "INSERT INTO fornecedor(nome, descricao) 
-  	VALUES('$nome', '$descricao')");
+	$sqlFornec = mysqli_query($conexao, "INSERT INTO fornecedor(nome, descricao,status) 
+  	VALUES('$nome', '$descricao',1)");
   	$IdFornecedor = mysqli_insert_id($conexao);
   	$sqlEnd = mysqli_query($conexao, "INSERT INTO endereco(cidade, logradouro, numero, bairro, cep, id_fornec) 
   	VALUES('$cidade', '$logradouro', '$numero', '$bairro', '$cep', '$IdFornecedor')");

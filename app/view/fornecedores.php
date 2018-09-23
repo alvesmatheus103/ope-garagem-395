@@ -12,29 +12,28 @@
 	echo "<th>Cidade</th>";
 	echo "<th>Telefone</th>";
 	echo "<th>Email</th>";
+	echo "<th>Ação</th>";
 	echo "</tr>";
   include "../model/conexao.php";	
-  $sqlF = "SELECT * FROM fornecedor ORDER BY id";
-  $retornoF = mysqli_query($conexao, $sqlF) or die ('Erro');
-  $sqlE = "SELECT * FROM endereco WHERE cpf_cliente = '' ORDER BY id_fornec";
-  $retornoE = mysqli_query($conexao, $sqlE) or die ('Erro');
-  $sqlC = "SELECT * FROM contato WHERE cpf_cliente = '' ORDER BY id_fornec";
-  $retornoC = mysqli_query($conexao, $sqlC) or die ('Erro');
+
+
+	$result_fornecedores = "SELECT * FROM fornecedor INNER JOIN endereco  ON fornecedor.id = endereco.id_fornec INNER JOIN contato ON fornecedor.id = contato.id_fornec WHERE fornecedor.status != 0";
+	$resultado_fornecedores = mysqli_query($conexao, $result_fornecedores);
 ?>
 
 
 <?php
-while ($registroF = mysqli_fetch_array($retornoF) and $registroE = mysqli_fetch_array($retornoE) and $registroC = mysqli_fetch_array($retornoC)){
-	$id = $registroF['id'];
+while ($registroF = mysqli_fetch_assoc($resultado_fornecedores)){
+	$id = $registroF['id_fornec'];
 	$nome = $registroF['nome'];
 	$descricao = $registroF['descricao'];
-	$cep = $registroE['cep'];
-	$logradouro = $registroE['logradouro'];
-	$numero = $registroE['numero'];
-	$bairro = $registroE['bairro'];
-	$cidade = $registroE['cidade'];
-	$telefone = $registroC['telefone'];
-	$email = $registroC['email'];
+	$cep = $registroF['cep'];
+	$logradouro = $registroF['logradouro'];
+	$numero = $registroF['numero'];
+	$bairro = $registroF['bairro'];
+	$cidade = $registroF['cidade'];
+	$telefone = $registroF['telefone'];
+	$email = $registroF['email'];
 
 	echo"<tr>";
 	echo "<td>". $id ."</td>";
@@ -47,7 +46,31 @@ while ($registroF = mysqli_fetch_array($retornoF) and $registroE = mysqli_fetch_
 	echo "<td>". $cidade."</td>";
 	echo "<td>". $telefone."</td>";
 	echo "<td>". $email."</td>";
-	echo "</tr>";
+		echo "<td>";
+?>
+		<button type='button' class='fas fa-pencil-alt' data-target='#alterarFornecedorModal' data-toggle='modal' 
+
+			data-whateverid="<?php echo $registroF['id'];?>"
+			data-whatevernome="<?php echo $registroF['nome'];?>"
+			data-whateverdescricao="<?php echo $registroF['descricao'];?>"
+			data-whatevercep="<?php echo $registroF['cep'];?>"
+			data-whateverlogradouro="<?php echo $registroF['logradouro'];?>"
+			data-whatevernumero="<?php echo $registroF['numero'];?>"
+			data-whateverbairro="<?php echo $registroF['bairro'];?>"
+			data-whatevercidade="<?php echo $registroF['cidade'];?>"
+			data-whatevertelefone="<?php echo $registroF['telefone'];?>"
+			data-whateveremail="<?php echo $registroF['email'];?>"
+
+			></button>
+		<button type='button' class='fas fa-trash-alt' data-target='#excluirFornecedorModal' data-toggle='modal' 
+		data-whateverid="<?php echo $registroF['id_fornec'];?>"
+		data-whateverstatus="<?php echo $registroF['status'];?>"
+
+
+		></button>			
+		</td>		
+
+<?php
 }
 mysqli_close($conexao);
 echo "</table>";

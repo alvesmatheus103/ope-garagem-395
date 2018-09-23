@@ -12,7 +12,7 @@
   <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
   <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
 
-  <title>Clientes cadastrados - Garagem</title>
+  <title>Fornecedores - Garagem</title>
 
 </head>
 <body id="top" data-spy="scroll">
@@ -20,63 +20,60 @@
   <button type="button" class="btn btn-lg see-cad" data-toggle="modal" data-target="#myModal">Cadastrar</button>
     <div class="tabela-listar">
         <?php
-          include "clientes.php";
+          include "fornecedores.php";
         ?>
 
       </div>
     </div>
 <div id="myModal" class="modal fade" role="dialog">
  
- <?php include "form_cadastro_cliente.php";?>
+ <?php include "form_cadastro_fornecedor.php";?>
 </div>
 
-<div id="alterarClienteModal" class="modal fade" role="dialog">
-<form name="meuForm" method="post" id="formulario" action="../controller/EditaCliente.php">
-    <div class="box box-cadastro-cliente"> 
-      <h1><center><i class="fas fa-address-card menu-icons"></i>Editar Cliente</center></h1>
+<div id="alterarFornecedorModal" class="modal fade" role="dialog">
+<form  method="POST" enctype="multipart/form-data"  action="../controller/EditaFornecedor.php">
+    <div class="box box-cadastro-fornecedor"> 
+      <h1><center><i class="fas fa-address-card menu-icons"></i>Editar fornecedor</center></h1>
 
       <label> 
         <span>Nome</span>
-        <input type="text" class="input-text" id="name" name="nome-cliente" placeholder="Nome" />
-        <input type="text" class="input-text" id="sobrenome" name="snome-cliente" placeholder="Sobrenome" />
+        <input hidden="true" type="text" class="input-text" id="id" name="id-fornecedor">
+        <input type="text" class="input-text" id="nome-fornecedor" name="nome-fornecedor" placeholder="Nome" />
       </label>
 
-      <label >
-        <span>CPF</span>
-        <input type="text" class="input-text js-cpf-mascara" id="cpf" name="cpf-cliente" placeholder="000.000.000-00" />
-
-      </label>
+      <label>
+        <span>Descrição</span>
+        <textarea class="input-text" id="descricao-fornecedor" name="descricao-fornecedor" rows="2" placeholder="até 200 caracteres"></textarea>
+      </label>   
 
       <label>
         <span>Endereço</span>
         <input type="text" class="input-text js-cep-mascara" id="cep-cliente"  placeholder="CEP" name="cep-cliente" onblur="pesquisacep(this.value);"  />
         <input type="text" class="input-text" id="logradouro" name="logradouro-cliente" placeholder="logradouro" />
-        <input type="text" class="input-text" id="numero" name="numero-end-cliente" placeholder="Nº" />
+        <input type="text" class="input-text" id="numero-end-fornecedor" name="numero-end-fornecedor" placeholder="Nº" />
         <input type="text" class="input-text" id="bairro" name="bairro-cliente" placeholder="Bairro"  />
-        <input type="text" class="input-text" id="cidade" name="cidade-cliente" placeholder="Cidade"  />
-
+        <input type="text" class="input-text" id="cidade" name="cidade-cliente" placeholder="Cidade" />
 
       </label>
       <label>
         <span>Telefone</span>
-        <input  type="text" class="input-text  js-celular-mascara" name="tel" id="telefone" placeholder="(00)00000-0000" />
+        <input  type="text" class="input-text  js-celular-mascara" name="tel" id="tel" placeholder="(00)00000-0000" />
       </label>
       
       <label>
         <span>Email</span><input type="email" class="input-text" name="email" id="email" placeholder="exemplo@exemplo.com" />
       </label>
-      <label class="button-cadastrar-cliente">
-        <input type="submit" class="button" id="button-cadastrar-cliente" value="Salvar" />
+      <label class="button-cadastrar-fornecedor">
+        <input type="submit" class="button" id="button-cadastrar-fornecedor" value="Salvar" />
       </label>           
     </div>
-
   </form>
 </div>
 
 
 
-<form name="meuForm" method="post" id="formularioEx" action="../controller/ApagaCliente.php">
-  <div id="excluirClienteModal" class="modal fade" role="dialog">
+<form name="meuForm" method="post" id="formularioEx" action="../controller/ApagaFornecedor.php">
+  <div id="excluirFornecedorModal" class="modal fade" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -86,10 +83,10 @@
           </button>
         </div>
         <div class="modal-body">
-          <p>Tem certeza que deseja apagar este cliente? :( </p>
+          <p>Tem certeza que deseja apagar este Fornecedor? :( </p>
           <label>
             <span>CPF</span>
-            <input type="text" class="input-text js-cpf-mascara" id="cpf_excluir" name="cpf-cliente" placeholder="000.000.000-00" />
+            <input type="text" class="input-text js-cpf-mascara" id="id_excluir" name="id-fornecedor" placeholder="000.000.000-00" />
              <input type="number" class="input-text" id="status_excluir" name="status" placeholder="deu ruim" />
           </label>
           
@@ -108,12 +105,11 @@
 
 
   <script type="text/javascript">
-    $('#alterarClienteModal').on('show.bs.modal', function (event) {
+    $('#alterarFornecedorModal').on('show.bs.modal', function (event) {
       var button = $(event.relatedTarget) // Button that triggered the modal
+      var recipientid = button.data('whateverid')
       var recipientnome = button.data('whatevernome')
-      var recipientcpf = button.data('whatevercpf') // Extract info from data-* attributes
-      var recipientsobrenome = button.data('whateversobrenome')
-      // var recipientcpf = button.data('whatevercpf')
+      var recipientdescricao = button.data('whateverdescricao')
       var recipientcep = button.data('whatevercep')
       var recipientlogradouro = button.data('whateverlogradouro')
       var recipientnumero = button.data('whatevernumero')
@@ -122,27 +118,27 @@
       var recipienttelefone = button.data('whatevertelefone')
       var recipientemail = button.data('whateveremail')
       var modal = $(this)
-      modal.find('#cpf').val(recipientcpf)
-      modal.find('#name').val(recipientnome)
-      modal.find('#sobrenome').val(recipientsobrenome)
+      modal.find('#id').val(recipientid)
+      modal.find('#nome-fornecedor').val(recipientnome)
+      modal.find('#descricao-fornecedor').val(recipientdescricao)
       modal.find('#cep-cliente').val(recipientcep)
       modal.find('#logradouro').val(recipientlogradouro)
-      modal.find('#numero').val(recipientnumero)
+      modal.find('#numero-end-fornecedor').val(recipientnumero)
       modal.find('#bairro').val(recipientbairro)
       modal.find('#cidade').val(recipientcidade)
-      modal.find('#telefone').val(recipienttelefone)
+      modal.find('#tel').val(recipienttelefone)
       modal.find('#email').val(recipientemail)   
       
     })
   </script>
 
   <script type="text/javascript">
-    $('#excluirClienteModal').on('show.bs.modal', function (event) {
+    $('#excluirFornecedorModal').on('show.bs.modal', function (event) {
       var button = $(event.relatedTarget) // Button that triggered the modal
-      var recipientcpf = button.data('whatevercpf') // Extract info from data-* attributes
+      var recipientid = button.data('whateverid') // Extract info from data-* attributes
       var recipientstatus = button.data('whateverstatus')
       var modal = $(this)
-      modal.find('#cpf_excluir').val(recipientcpf)
+      modal.find('#id_excluir').val(recipientid)
       modal.find('#status_excluir').val(recipientstatus)
     })
   </script>

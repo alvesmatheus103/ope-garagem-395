@@ -15,7 +15,7 @@
 	echo "<th>Ação</th>";
 	echo "</tr>";
 
-	$result_clientes = "SELECT * FROM cliente INNER JOIN endereco  ON cliente.cpf = endereco.cpf_cliente INNER JOIN contato ON cliente.cpf = contato.cpf_cliente WHERE cliente.status != 0";
+	$result_clientes = "SELECT * FROM cliente INNER JOIN endereco  ON cliente.cpf = endereco.cpf_cliente INNER JOIN contato ON cliente.cpf = contato.cpf_cliente WHERE cliente.status != 0 AND cliente.cpf !=''";
 
 	$resultado_clientes = mysqli_query($conexao, $result_clientes);
 

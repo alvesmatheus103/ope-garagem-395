@@ -16,7 +16,7 @@
       <label>
         <span>Endereço</span>
         <input type="text" class="input-text js-cep-mascara" id="cep-cliente"  placeholder="CEP" name="cep-cliente" onblur="pesquisacep(this.value);"  />
-        <input type="text" class="input-text" id="logradouro" name="logradouro-cliente" placeholder="logradouro" readonly/>
+        <input type="text" class="input-text" id="logradouro" name="logradouro-cliente" placeholder="logradouro" />
         <input type="text" class="input-text" id="numero" name="numero-end-cliente" placeholder="Nº" />
         <input type="text" class="input-text" id="bairro" name="bairro-cliente" placeholder="Bairro" readonly />
         <input type="text" class="input-text" id="cidade" name="cidade-cliente" placeholder="Cidade" readonly/>
