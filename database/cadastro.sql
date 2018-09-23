@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 16-Set-2018 às 21:44
+-- Generation Time: 23-Set-2018 às 20:13
 -- Versão do servidor: 10.1.35-MariaDB
 -- versão do PHP: 7.2.9
 
@@ -40,7 +40,9 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`cpf`, `nome`, `sobrenome`, `status`) VALUES
-('111.111.111-11', 'cliente', 'teste', b'1');
+('111.111.111-11', 'Matheus', 'Alves', b'1'),
+('222.222.222-22', 'Jose ', 'Silva', b'0'),
+('', '', '', b'1');
 
 -- --------------------------------------------------------
 
@@ -61,7 +63,12 @@ CREATE TABLE `contato` (
 --
 
 INSERT INTO `contato` (`id`, `telefone`, `email`, `cpf_cliente`, `id_fornec`) VALUES
-(55, '(11)11111-1111', 'cleinte@teste1.com', '111.111.111-11', 0);
+(55, '(11)11111-1111', 'cleinte@teste1.com', '111.111.111-12', 0),
+(65, '(11)11111-1111', 'testem@f.com', '', 1),
+(66, '(22)22222-2222', 'jose@jose.com', '222.222.222-22', 0),
+(67, '(33)33333-3333', 'jose@tes.com', '', 2),
+(68, '(33)33333-3333', 'matheus21@gmail.com', '111.111.111-11', 0),
+(69, '', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -85,7 +92,12 @@ CREATE TABLE `endereco` (
 --
 
 INSERT INTO `endereco` (`id`, `cidade`, `logradouro`, `numero`, `bairro`, `cep`, `id_fornec`, `cpf_cliente`) VALUES
-(63, 'SÃ£o Paulo', 'Rua Ãlvaro Pinto', '11', 'Jardim Maria Estela', '04181-010', 0, '111.111.111-11');
+(63, 'SÃ£o Paulo', 'Rua Ãlvaro Pinto', '11', 'Jardim Maria Estela', '07791-025', 0, '111.111.111-12'),
+(75, 'Cajamar', 'Rua dos Eucaliptos', '00020', 'Portais (Polvilho)', '07791-025', 2, ''),
+(73, 'SÃ£o Paulo', 'Rua CaraÃ­bas', '20', 'Perdizes', '05020-000', 1, ''),
+(74, 'SÃ£o Paulo', 'Rua Jose', '20', 'Perdizes', '05020-000', 0, '222.222.222-22'),
+(76, 'Cajamar', 'matheus', '111', 'Portais (Polvilho)', '07791-025', 0, '111.111.111-11'),
+(77, '', '', '', '', '', 0, '');
 
 -- --------------------------------------------------------
 
@@ -96,8 +108,17 @@ INSERT INTO `endereco` (`id`, `cidade`, `logradouro`, `numero`, `bairro`, `cep`,
 CREATE TABLE `fornecedor` (
   `id` int(11) NOT NULL,
   `nome` varchar(15) NOT NULL,
-  `descricao` varchar(200) NOT NULL
+  `descricao` varchar(200) NOT NULL,
+  `status` bit(1) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `fornecedor`
+--
+
+INSERT INTO `fornecedor` (`id`, `nome`, `descricao`, `status`) VALUES
+(1, 'Matheus Fornece', 'Matheus Fornecedor descricao', b'1'),
+(2, 'Jose fonrdsdsa', 'Meu teste', b'0');
 
 -- --------------------------------------------------------
 
@@ -239,19 +260,19 @@ ALTER TABLE `produto`
 -- AUTO_INCREMENT for table `contato`
 --
 ALTER TABLE `contato`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `endereco`
 --
 ALTER TABLE `endereco`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `fornecedor`
 --
 ALTER TABLE `fornecedor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pedido`
